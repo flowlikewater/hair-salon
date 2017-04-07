@@ -1,0 +1,63 @@
+<h1><%= @stylist.name %> | <%= @stylist.experience %> years of experience </h1>
+
+<hr>
+
+<h3>List of clients:</h3>
+
+<% if @clients.length>0 %>
+  <ul>
+    <% @clients.each() do |client| %>
+      <li><a href="/clients/<%= client.id() %>"><%= client.name %></a></li>
+      <form action="/clients/<%= client.id %>" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <button type="submit" class='btn-danger'>Delete Client</button>
+      </form>
+    <% end %>
+  </ul>
+<% else %>
+
+  <h3><%= @stylist.name %> has no clients yet</h3>
+
+<% end %>
+
+<hr>
+
+<h3>Add a client:</h3>
+
+<form action="/stylists/<%= @stylist.id %>" method="post">
+  <label for="name">Client's name:</label>
+  <input id="name" name="name" type="text">
+  <button type="submit" class='btn-success'>Add client</button>
+</form>
+
+
+<hr>
+
+<h3>Update Stylist</h3>
+
+<form action="/stylists/<%= @stylist.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+
+  <label for="name">Rename your stylist:</label>
+  <input id="name" name="name" type="text">
+  <br>
+  <br>
+  <label for="experience">Change years of experience:</label>
+  <input id="experience" name="experience" type="number">
+  <br>
+  <br>
+  <button type="submit" class='btn-success'>Update</button>
+</form>
+
+<hr>
+
+<h3>Delete Stylist</h3>
+
+<form action="/stylists/<%= @stylist.id %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class='btn-danger'>Delete Stylist</button>
+</form>
+
+<hr>
+
+<p><a href="/">Return to Main Page</a></p>

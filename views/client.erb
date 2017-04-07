@@ -1,0 +1,16 @@
+<h1><%= @client.name %></h1>
+
+<hr>
+
+<form action="/clients/<%= @client.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+
+  <label for="name">Rename your client:</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit">Update</button>
+</form>
+
+<hr>
+
+<p><a href="/">Return to Main Page</a></p>

@@ -53,4 +53,16 @@ require("spec_helper")
       end
     end
 
+    describe("#clients") do
+      it("finds all the clients of a specific stylist") do
+        stylist = Stylist.new({:name => "Vidal Sassoon", :experience => 10})
+        stylist.save()
+        client = Client.new({:name => "Brad Pitt", :stylist_id => stylist.id()})
+        client.save()
+        client2 = Client.new({:name => "Angelina Jolie", :stylist_id => stylist.id()})
+        client2.save()
+        expect(stylist.clients()).to(eq([client, client2]))
+      end
+    end
+
 end

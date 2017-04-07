@@ -1,0 +1,33 @@
+.banner {
+  text-align: center;
+}
+
+#logo {
+  width: 30%;
+  height: 30%;
+}
+
+#index-header {
+  text-align: center;
+  background-image: url('https://cdn0.vox-cdn.com/thumbor/nvdT8T7PdPhPMxHUIcZ3Nd57gh8=/0x600/cdn0.vox-cdn.com/uploads/chorus_asset/file/4956423/endLink-Beauty-Salon-Yasunari-Tsukada-8-600x400-1.0.jpg');
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 120px;
+}
+
+.index-directory {
+  text-align: center;
+  font-size: 25px;
+}
+
+body {
+  font-family: 'Avenir Next';
+  src: url("http://www.yoursite.com/fonts/Avenir_Next.otf");
+}
+
+
+.site-description {
+  display:inline;
+  background-color: white;
+}
