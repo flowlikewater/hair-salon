@@ -28,7 +28,7 @@ require("spec_helper")
     describe("#==") do
       it("is the same stylist if it has the same name, experience, and id") do
         stylist = Stylist.new({:name => "Vidal Sassoon", :experience => 10})
-        stylist2 = Stylist.new({:name => "Trevor Sorbie", :experience => 20})
+        stylist2 = Stylist.new({:name => "Vidal Sassoon", :experience => 10})
         expect(stylist).to(eq(stylist2))
       end
     end
